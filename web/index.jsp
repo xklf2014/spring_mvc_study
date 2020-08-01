@@ -36,6 +36,8 @@
 </form>
 
 <a href="${ctx}/user">search</a>
+<br>
 
+<img src="${ctx}/images/a.jpg">
 </body>
 </html>
