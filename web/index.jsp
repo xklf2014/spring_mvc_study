@@ -39,5 +39,21 @@
 <br>
 
 <img src="${ctx}/images/a.jpg">
+
+
+<form action="${ctx}/converter" method="post">
+    <input type="text" name="user">
+    <input type="submit" value="submit">
+</form>
+
+
+<form action="${ctx}/testDateConverter" method="post">
+    id:<input type="text" name="id">
+    name:<input type="text" name="name">
+    age:<input type="text" name="age">
+    birth:<input type="text" name="birth">
+    <input type="submit" value="submit">
+
+</form>
 </body>
 </html>

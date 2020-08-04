@@ -16,7 +16,26 @@
     </bean>
     <bean id="/myFirstController" class="com.story.controller.MyFirstController"></bean>
     <mvc:default-servlet-handler />
-    <mvc:annotation-driven></mvc:annotation-driven>
+    <mvc:annotation-driven conversion-service="conversionService"></mvc:annotation-driven>
     <!--<bean id="/hello" class="com.story.controller.HelloController"></bean>-->
 
+ <!--   <bean class="com.story.test1.viewresolver.MyViewResolver">
+        <property name="order" value="1"></property>
+    </bean>-->
+
+   <!-- <bean id="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean">
+        <property name="converters">
+            <set>
+                <ref bean="myConverter"></ref>
+            </set>
+        </property>
+    </bean>-->
+
+    <bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+        <property name="converters">
+            <set>
+                <ref bean="myConverter"></ref>
+            </set>
+        </property>
+    </bean>
 </beans>

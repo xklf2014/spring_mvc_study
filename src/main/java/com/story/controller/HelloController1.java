@@ -37,4 +37,10 @@ public class HelloController1 {
         return "hello";
 
     }
+
+    @RequestMapping(value = "/**/h*llo?")
+    public String hello4(){
+        System.out.println("hello4");
+        return "hello";
+    }
 }
