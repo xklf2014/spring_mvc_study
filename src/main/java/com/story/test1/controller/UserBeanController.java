@@ -26,6 +26,20 @@ public class UserBeanController {
     }
 
 
+    @RequestMapping("/updateUser1")
+    public String update1(@ModelAttribute("u") UserBean userBean) {
+        System.out.println(userBean);
+        return "update";
+    }
 
+    @ModelAttribute("u")
+    public void testModelAttribute1(Model model) {
+        UserBean userBean = new UserBean();
+        userBean.setId(1);
+        userBean.setName("lisi");
+        userBean.setAge(20);
+        userBean.setPassword("123456");
+        model.addAttribute("userBean", userBean);
+    }
 
 }

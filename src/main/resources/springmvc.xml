@@ -9,14 +9,24 @@
        http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
     <context:component-scan base-package="com.story"></context:component-scan>
+    <mvc:default-servlet-handler />
+    <mvc:annotation-driven conversion-service="conversionService"></mvc:annotation-driven>
 
     <bean id="internalResourceViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="suffix" value=".jsp"></property>
         <property name="prefix" value="/WEB-INF/page/"></property>
     </bean>
+
     <bean id="/myFirstController" class="com.story.controller.MyFirstController"></bean>
-    <mvc:default-servlet-handler />
-    <mvc:annotation-driven conversion-service="conversionService"></mvc:annotation-driven>
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="defaultEncoding" value="UTF-8"></property>
+        <property name="maxUploadSize" value="1024000"></property>
+    </bean>
+
+    <mvc:interceptors>
+        <bean class="com.story.test2.interceptor.MyInterceptor"></bean>
+        <bean class="com.story.test2.interceptor.MySecondInterceptor"></bean>
+    </mvc:interceptors>
     <!--<bean id="/hello" class="com.story.controller.HelloController"></bean>-->
 
  <!--   <bean class="com.story.test1.viewresolver.MyViewResolver">
