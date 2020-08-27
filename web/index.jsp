@@ -55,5 +55,8 @@
     <input type="submit" value="submit">
 
 </form>
+
+<a href="${ctx}/i18n">国际化</a>
+<a href="${ctx}/exception">异常处理</a>
 </body>
 </html>

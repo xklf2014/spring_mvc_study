@@ -23,10 +23,10 @@
         <property name="maxUploadSize" value="1024000"></property>
     </bean>
 
-    <mvc:interceptors>
+   <!-- <mvc:interceptors>
         <bean class="com.story.test2.interceptor.MyInterceptor"></bean>
         <bean class="com.story.test2.interceptor.MySecondInterceptor"></bean>
-    </mvc:interceptors>
+    </mvc:interceptors>-->
     <!--<bean id="/hello" class="com.story.controller.HelloController"></bean>-->
 
  <!--   <bean class="com.story.test1.viewresolver.MyViewResolver">
@@ -48,4 +48,15 @@
             </set>
         </property>
     </bean>
+
+    <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+        <property name="basename" value="login"></property>
+    </bean>
+
+    <!--<bean id="localeResolver" class="com.story.test2.MyLocaleReslover"></bean>-->
+    <bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver"></bean>
+    <mvc:interceptors>
+        <bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor"></bean>
+    </mvc:interceptors>
+
 </beans>
